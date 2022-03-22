@@ -8,6 +8,7 @@ public class WordLadder {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         int len = beginWord.length(), ans = 0;
         Map<String, Set<String>> graph = new HashMap<>();
+        System.out.println(wordList);
         for (String s1 : wordList) {
             graph.put(s1, new HashSet<>());
             for (String s2 : wordList) {
@@ -21,6 +22,7 @@ public class WordLadder {
                     graph.get(s1).add(s2);
             }
         }
+        System.out.println(graph);
         Queue<String> q = new ArrayDeque<>();
         for (String s2 : wordList) {
             int count = 0;
@@ -55,6 +57,7 @@ public class WordLadder {
         Map<String, Boolean> visited = new HashMap<>();
 
         this.wordList.forEach( word -> visited.put(word, false));
+        System.out.println(visited);
 
         Queue<String> queue = new LinkedList<>();
         queue.add(beginWord);
@@ -105,10 +108,10 @@ public class WordLadder {
     public static void main(String[] args) {
         WordLadder wordLadder = new WordLadder();
         System.out.println(
-                wordLadder.ladderLength("hit", "cog", Arrays.asList("hot","dot","dog","lot","log","cog")));
-        System.out.println(
-                wordLadder.ladderLength("hit", "cog", Arrays.asList("hot","dot","dog","lot","log"))
-        );
+                wordLadder.ladderLengthFaster("hit", "cog", Arrays.asList("hot","dot","dog","lot","log","cog")));
+//        System.out.println(
+//                wordLadder.ladderLength("hit", "cog", Arrays.asList("hot","dot","dog","lot","log"))
+//        );
         System.out.println(
                 wordLadder.ladderLengthFaster("hit", "cog", Arrays.asList("hot","dot","tog","cog"))
         );

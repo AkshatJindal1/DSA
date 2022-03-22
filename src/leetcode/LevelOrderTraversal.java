@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class LevelOrderTraversal {
@@ -32,5 +33,6 @@ public class LevelOrderTraversal {
         System.out.println(new LevelOrderTraversal().levelOrder(tree1));
         System.out.println(new LevelOrderTraversal().levelOrder(tree2));
         System.out.println(new LevelOrderTraversal().levelOrder(null));
+
     }
 }
